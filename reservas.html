@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Squada One"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Stalemate"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reservas.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="title--container">
+          <h1 class="title">Dream Team</h1>
+          <h3 class="subtitle">sushi club</h3>
+        </div>
+        <div class="nav--link--container">
+          <ul class="nav--list">
+            <li class="nav--list--item">
+              <a class="nav--link" href="index.html">
+                <img class="home--icon" src="Media/home.png" alt="Home icon" />
+                home
+              </a>
+            </li>
+            <li class="nav--list--item">
+              <a class="nav--link" href="nosotros.html">
+                <img
+                  class="nosotros--icon"
+                  src="Media/nosotros.png"
+                  alt="Nosotros icon"
+                />
+                nosotros
+              </a>
+            </li>
+            <li class="nav--list--item">
+              <a class="nav--link" href="menu.html">
+                <img class="menu--icon" src="Media/menu.png" alt="Menu icon" />
+                menu
+              </a>
+            </li>
+            <li class="nav--list--item">
+              <a class="nav--link" href="reservas.html">
+                <img
+                  class="reservas--icon"
+                  src="Media/reservas.png"
+                  alt="Reservas icon"
+                />
+                reservas
+              </a>
+            </li>
+            <li class="nav--list--item">
+              <a class="nav--link" href="registrate.html">
+                <img
+                  class="registrarme--icon"
+                  src="Media/registrarme.png"
+                  alt="Registrarme icon"
+                />
+                registrarme
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ACA EMPIEZA EL CONTENDIO DE reservas con fecha.
+            ------------------------------
+        En donde vamos a usar un modelo de reservas.
+        }
+        -->
+
+    <div class="fondo_form">
+      <h2>Reserva de Cita</h2>
+      <form id="reserva-form" method="post">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" required /><br />
+
+        <label for="horario">Horario:</label>
+        <select id="horario" required>
+          <option value="12:00 AM">12:00 AM</option>
+          <option value="12:30 PM">12:30 PM</option>
+          <option value="13:00 PM">13:00 PM</option>
+          <option value="13:30 PM">13:30 PM</option>
+          <option value="13:45 PM">13:45 PM</option>
+          <option value="14:00 PM">14:00 PM</option>
+          <option value="14:15 PM">14:15 PM</option>
+          <option value="14:30 PM">14:30 PM</option>
+          <option value="14:45 PM">14:45 PM</option>
+          <option value="15:00 PM">15:00 PM</option>
+          <option value="20:00 PM">20:00 PM</option>
+          <option value="20:15 PM">20:15 PM</option>
+          <option value="20:30 PM">20:30 PM</option>
+          <option value="20:45 PM">20:45 PM</option>
+          <option value="21:00 PM">21:00 PM</option>
+          <option value="21:15 PM">21:15 PM</option>
+          <option value="21:30 PM">21:30 PM</option>
+          <option value="22:00 PM">22:00 PM</option>
+          <option value="22:15 PM">22:15 PM</option>
+          <option value="22:30 PM">22:30 PM</option>
+          <option value="22:45 PM">22:45 PM</option>
+          <option value="23:00 PM">23:00 PM</option>
+          <option value="23:15 PM">23:15 PM</option>
+          <option value="23:30 PM">23:30 PM</option>
+          <option value="23:45 PM">23:45 PM</option>
+          <option value="00:00 PM">00:00 PM</option>
+          <!-- Agrega más opciones de horarios según tus necesidades --></select
+        ><br />
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required /><br />
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required /><br />
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" required /><br />
+
+        <button type="button" id="reservar">Reservar</button>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $fecha = $_POST["fecha"];
+        $horario = $_POST["horario"];
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $email = $_POST["email"];
+      
+        $to = "mpini1983@gmail.com";
+        $subject = "Reserva de Cita";
+        $message = "Fecha: $fecha\nHorario: $horario\nNombre: $nombre\nApellido: $apellido\nEmail: $email";
+      
+        mail($to, $subject, $message);
+      
+        echo "¡Reserva realizada con éxito! Te hemos enviado un correo electrónico con los detalles.";
+      }
+      ?>
+      </form>
+
+      <script>
+        document
+          .getElementById("reservar")
+          .addEventListener("click", function () {
+            const fechaInput = document.getElementById("fecha");
+            const horario = document.getElementById("horario").value;
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const email = document.getElementById("email").value;
+
+            const fechaSeleccionada = new Date(fechaInput.value);
+            const fechaActual = new Date();
+            const horarioActual =
+              new Date().getHours() + ":" + new Date().getMinutes();
+
+            if (fechaSeleccionada <= fechaActual) {
+              alert("Debe elegir una fecha posterior a la actual.");
+              return;
+            }
+
+            if (
+              fechaSeleccionada.toDateString() === fechaActual.toDateString() &&
+              horario < horarioActual
+            ) {
+              alert(
+                "Debe elegir otro horario, no puede ser anterior al horario actual."
+              );
+              return;
+            }
+
+            const mensaje = `
+                            La fecha elegida es ${fechaInput.value},
+                            el horario seleccionado es ${horario},
+                            Nombre: ${nombre}, Apellido: ${apellido},
+                            Email: ${email}`;
+
+            alert(mensaje);
+          });
+      </script>
+    </div>
+
+    <footer>
+      <div class="footer--ubicacion">
+        <a href="https://www.google.com/maps/"
+          ><img
+            class="ubicacion--icon"
+            src="Media/ubicacion.png"
+            alt="Ubicacion icon"
+        /></a>
+        <p>
+          Av. Siempreviva 123 <br />
+          Buenos Aires, Argentina
+        </p>
+      </div>
+      <p>DT Sushi Club All ® rights reserved</p>
+      <div class="footer--redes">
+        <a href="https://web.whatsapp.com/"
+          ><img
+            class="whatsapp--icon"
+            src="Media/whatsapp.png"
+            alt="Whatsapp icon"
+        /></a>
+        <a href="https://www.instagram.com/"
+          ><img
+            class="instagram--icon"
+            src="Media/instagram.png"
+            alt="Instagram icon"
+        /></a>
+        <a href="https://www.facebook.com/"
+          ><img
+            class="facebook--icon"
+            src="Media/facebook.png"
+            alt="Facebook icon"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Squada One"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Stalemate"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <title>Carrito de Compras</title>
+  </head>
+  <body>
+    <nav>
+      <div class="title--container">
+        <h1 class="title">Dream Team</h1>
+        <h3 class="subtitle">sushi club</h3>
+      </div>
+      <div class="nav--link--container">
+        <ul class="nav--list">
+          <li class="nav--list--item">
+            <a class="nav--link" href="index.html">
+              <img class="home--icon" src="Media/home.png" alt="Home icon" />
+              home
+            </a>
+          </li>
+          <li class="nav--list--item">
+            <a class="nav--link" href="nosotros.html">
+              <img
+                class="nosotros--icon"
+                src="Media/nosotros.png"
+                alt="Nosotros icon"
+              />
+              nosotros
+            </a>
+          </li>
+          <li class="nav--list--item">
+            <a class="nav--link" href="menu.html">
+              <img class="menu--icon" src="Media/menu.png" alt="Menu icon" />
+              menu
+            </a>
+          </li>
+          <li class="nav--list--item">
+            <a class="nav--link" href="reservas.html">
+              <img
+                class="reservas--icon"
+                src="Media/reservas.png"
+                alt="Reservas icon"
+              />
+              reservas
+            </a>
+          </li>
+          <li class="nav--list--item">
+            <a class="nav--link" href="registrate.html">
+              <img
+                class="registrarme--icon"
+                src="Media/registrarme.png"
+                alt="Registrarme icon"
+              />
+              registrarme
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- empieza el codigo para AGREGAR Y MOSTRAR LOS PRODUCTOS.
+------------------------------------------------------------
+-->
+    <div class="principal_carrito">
+      <h1>Productos Disponibles</h1>
+      <ul id="productos">
+        <li data-nombre="Combo Patagonia 15p" data-precio="3500">
+          <img src="./imagenes/Patagonia_15p.png" alt="Patagonia_15p" />
+          <h3>Combo Patagonia 15 piezas</h3>
+          <p>
+            15 piezas. Combinado con 3 rolls Tora (lango), 3 rolls Lango Mex
+            (lango), 3 rolls Rio Negro (salmón trout), 3 rolls Okinawa
+            (kanikama) y 3 rolls Limay (salmón trout). Incluye 1 soja + 1 wasabi
+            + 1 palitos.
+          </p>
+          <p>Precio: $3500.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+
+        <li data-nombre="Combo Patagonia 30 piezas" data-precio="6900">
+          <img src="./imagenes/patagonia_30p.png" alt="Patagonia_30p" />
+          <h3>Combo Patagonia 30 piezas</h3>
+          <p>
+            30 piezas. Combinado con 6 rolls Tora (lango), 4 rolls Hot New York
+            phila (salmón trout), 6 rolls Lango Mex (lango), 4 rolls Rio Negro
+            (salmón trout), 6 rolls Okinawa (kanikama) y 4 rolls Limay (salmón
+            trout). Incluye 2 sojas, + 2 wasabis + 2 palitos.
+          </p>
+          <p>Precio: $6900.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li data-nombre="Combo Patagonia 40 piezas" data-precio="9000">
+          <img src="./imagenes/patagonia_40p.png" alt="Patagonia_40p" />
+          <h3>Combo Patagonia 40 piezas</h3>
+          <p>
+            40 piezas. Combinado con 8 rolls Tora (lango), 5 rolls New York
+            phila (salmón), 8 rolls Lango Mex (lango), 6 rolls Rio Negro (trucha
+            patagónica), 8 rolls Okinawa (kanikama) y 5 rolls Limay (trucha
+            patagónica . Incluye 3 sojas, + 3 wasabis + 3
+          </p>
+          <p>Precio: $9000.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li data-nombre="Alaska 40 piezas" data-precio="10000">
+          <img src="./imagenes/alaska_40p.png" alt="Alaska 40 piezas" />
+          <h3>Alaska 40 piezas</h3>
+          <p>
+            40 piezas - 6 NY Phila (salmón, phila, palta), 6 Hot NY Phila(salmón
+            trout, rebozado), 6 Persia (salmón, phila, verdeo), 8 Paris (salmón
+            trout, phila), 6 Philacuya (tapa salmón, phila, palta, maracuyá), 8
+            Clerc (salmón trout cocido, phila). 3 palito + 3 soja + 3 wasabi
+          </p>
+          <p>Precio: $10000.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li
+          data-nombre="Tokyo 40 - Salmón, Lango, Kani y Veggie. 40 piezas"
+          data-precio="7000"
+        >
+          <img src="./imagenes/tokyo_40p.png" alt="tokyo_40" />
+          <h3>Tokyo 40 - Salmón, Lango, Kani y Veggie. 40 piezas</h3>
+          <p>
+            40 piezas - 6 Paris (salmón trout, phila), 6 Clerc (salmón trout
+            cocido, phila), 10 Napoli (lango, phila, mostaza&miel), 10
+            California (kani, phila, palta), 8 Valencia (tomate seco, rúcula,
+            phila). 3 palitos + 3 soja + 3 wasabi
+          </p>
+          <p>Precio: $7000.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+
+        <li data-nombre="Tokio 12 piezas" data-precio="2350">
+          <img src="./imagenes/tokyo_12p.png" alt="tokyo_12" />
+          <h3>Tokio 12 piezas</h3>
+          <p>
+            Comes Rico y Pagas Poco Combinado con Roll California x4, Roll
+            Napoli x4, Roll Valencia x4
+          </p>
+          <p>Precio: $2350.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li data-nombre="Poke Salmón" data-precio="3500">
+          <img src="./imagenes/poke_salmon.png" alt="poke_salmon" />
+          <h3>Poke Salmón</h3>
+          <p>
+            Fresca ensalada de salmón, palta, queso phila, repollo y zanahoria
+            sobre arroz Incluye 1 Salsa Soja
+          </p>
+          <p>Precio: $3500.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li data-nombre="Poke Langostinos" data-precio="2500">
+          <img src="./imagenes/poke_langostinos.png" alt="poke_langos" />
+          <h3>Poke Langostinos</h3>
+          <p>
+            425 gr - Fresca ensalada de salmón trout, palta, queso phila,
+            repollo y zanahoria sobre arroz. + 1 soja
+          </p>
+          <p>Precio: $2500.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li data-nombre="Poke Patagónica" data-precio="3300">
+          <img src="imagenes/poke_patagonica.png" alt="poke_pata" />
+          <h3>Poke Patagónica</h3>
+          <p>
+            425 gr - Fresca ensalada de salmón trout, palta, queso phila,
+            repollo y zanahoria sobre arroz. + 1 soja
+          </p>
+          <p>Precio: $3300.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <li data-nombre="Veggie 15 piezas" data-precio="2800">
+          <img src="./imagenes/viggie_15p.png" alt="vigie_15p" />
+          <h3>Veggie 15 piezas</h3>
+          <p>
+            15 piezas - 3 Valencia (tomate seco, rúcula, phila), 3 Spring
+            (palta, cebolla crunch y verdeo), 3 Fresh (hongo, phila, pickle), 3
+            Andino (palta, chaucha tempu, zanahoria, tapa tomate), 3 Chimi
+            Nikkei (cherry, chaucha, zanah). 1 palito + 1 soja + 1 wasabi
+          </p>
+          <p>Precio: $2800.00</p>
+          <button class="agregar">+</button>
+          <button class="restar">-</button>
+        </li>
+        <!-- Agrega más productos similares aquí -->
+      </ul>
+      <!-- Agrega más productos similares aquí -->
+
+      <h2>Carrito de Compras</h2>
+      <ul id="carrito">
+        <!-- Aquí se mostrarán los productos agregados al carrito -->
+      </ul>
+
+      <p>Cantidad de Productos en el Carrito: <span id="cantidad">0</span></p>
+      <p>Precio Total: $<span id="precio-total">0</span></p>
+
+      <button id="ver-carrito" class="modal-button">Ver Carrito</button>
+    </div>
+    <!--  fin estilo del carrito  -->
+
+    <script>
+      const productos = document.querySelectorAll("#productos li");
+      const carrito = document.getElementById("carrito");
+      const cantidadElement = document.getElementById("cantidad");
+      const precioTotalElement = document.getElementById("precio-total");
+      const verCarritoButton = document.getElementById("ver-carrito");
+      const modalContainer = document.createElement("div");
+      modalContainer.classList.add("modal-container");
+
+      let carritoProductos = [];
+      let cantidadEnCarrito = 0;
+      let precioTotal = 0;
+
+      // Función para actualizar la cantidad y precio total
+      function actualizarTotales() {
+        cantidadElement.textContent = cantidadEnCarrito;
+        precioTotalElement.textContent = precioTotal.toFixed(2);
+      }
+
+      // Función para agregar un producto al carrito
+      function agregarAlCarrito(nombre, precio) {
+        carritoProductos.push({ nombre, precio });
+        cantidadEnCarrito++;
+        precioTotal += precio;
+        actualizarTotales();
+      }
+
+      // Función para quitar un producto del carrito
+      function quitarDelCarrito(nombre, precio) {
+        const index = carritoProductos.findIndex(
+          (item) => item.nombre === nombre
+        );
+        if (index !== -1) {
+          carritoProductos.splice(index, 1);
+          cantidadEnCarrito--;
+          precioTotal -= precio;
+          actualizarTotales();
+        }
+      }
+
+      // Función para mostrar el carrito en una ventana modal
+      function mostrarCarrito() {
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+        const modalContent = document.createElement("div");
+        modalContent.classList.add("modal-content");
+
+        carritoProductos.forEach((item) => {
+          const productoEnCarrito = document.createElement("li");
+          productoEnCarrito.textContent = `${
+            item.nombre
+          } - $${item.precio.toFixed(2)}`;
+          const quitarButton = document.createElement("button");
+          quitarButton.textContent = "Quitar";
+          quitarButton.classList.add("modal-button");
+          quitarButton.addEventListener("click", () => {
+            quitarDelCarrito(item.nombre, item.precio);
+            carrito.removeChild(productoEnCarrito);
+            modalContent.removeChild(productoEnCarrito);
+          });
+          productoEnCarrito.appendChild(quitarButton);
+          modalContent.appendChild(productoEnCarrito);
+        });
+
+        const comprarButton = document.createElement("button");
+        comprarButton.textContent = "Comprar";
+        comprarButton.classList.add("modal-button");
+        comprarButton.addEventListener("click", () => {
+          alert(
+            `Compra realizada. Gracias por su compra.\nUd compró ${cantidadEnCarrito} productos por un total de $${precioTotal.toFixed(
+              2
+            )}`
+          );
+          carritoProductos = [];
+          cantidadEnCarrito = 0;
+          precioTotal = 0;
+          carrito.innerHTML = "";
+          actualizarTotales();
+          modal.style.display = "none";
+        });
+
+        const volverButton = document.createElement("button");
+        volverButton.textContent = "Volver";
+        volverButton.classList.add("modal-button");
+        volverButton.addEventListener("click", () => {
+          modal.style.display = "none";
+          carrito.innerHTML = "";
+          carritoProductos.forEach((item) => {
+            const productoCarrito = document.createElement("li");
+            productoCarrito.textContent = `${
+              item.nombre
+            } - $${item.precio.toFixed(2)}`;
+            carrito.appendChild(productoCarrito);
+          });
+          actualizarTotales();
+        });
+
+        modalContent.appendChild(comprarButton);
+        modalContent.appendChild(volverButton);
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+      }
+
+      // Agregar un controlador de eventos a los botones de agregar y restar en los productos
+      productos.forEach((producto) => {
+        const nombre = producto.getAttribute("data-nombre");
+        const precio = parseFloat(producto.getAttribute("data-precio"));
+        const botonAgregar = producto.querySelector(".agregar");
+        const botonRestar = producto.querySelector(".restar");
+
+        botonAgregar.addEventListener("click", () => {
+          agregarAlCarrito(nombre, precio);
+        });
+
+        botonRestar.addEventListener("click", () => {
+          quitarDelCarrito(nombre, precio);
+        });
+      });
+
+      // Agregar un controlador de eventos al botón "Ver Carrito"
+      verCarritoButton.addEventListener("click", () => {
+        mostrarCarrito();
+      });
+    </script>
+
+    <!-- aca empieza el footer-->
+
+    <footer>
+      <div class="footer--ubicacion">
+        <a href="https://www.google.com/maps/"
+          ><img
+            class="ubicacion--icon"
+            src="Media/ubicacion.png"
+            alt="Ubicacion icon"
+        /></a>
+        <p>
+          Av. Siempreviva 123 <br />
+          Buenos Aires, Argentina
+        </p>
+      </div>
+      <p>DT Sushi Club All ® rights reserved</p>
+      <div class="footer--redes">
+        <a href="https://web.whatsapp.com/"
+          ><img
+            class="whatsapp--icon"
+            src="Media/whatsapp.png"
+            alt="Whatsapp icon"
+        /></a>
+        <a href="https://www.instagram.com/"
+          ><img
+            class="instagram--icon"
+            src="Media/instagram.png"
+            alt="Instagram icon"
+        /></a>
+        <a href="https://www.facebook.com/"
+          ><img
+            class="facebook--icon"
+            src="Media/facebook.png"
+            alt="Facebook icon"
+        /></a>
+      </div>
+    </footer>
+  </body>
+</html>
