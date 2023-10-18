@@ -2,8 +2,8 @@ p, h2, h3 {
     font-size: 1.5rem;
 }
 img{
-    width="200px";
-    height="200px";
+    width:"200px";
+    height:"200px";
     border-radius: 150px;
 }
 
@@ -22,14 +22,6 @@ img{
     border-radius: 20px;
     margin: 10px;
 }
-/*
-#uno, #dos, #tres, #cuatro {
-    border: 1px solid #FE2E2E;
-    width: calc(25% - 20px); /* El 20px es el margen, el 25% asegura que haya 4 divs en una fila 
-    margin: 10px; /* Espacio entre los divs 
-    padding: 10px;  Espacio interior 
-}
-*/
 
 /* Para hacer que los divs tengan el mismo alto, puedes usar 'display: flex' en cada uno */
 #uno, #dos, #tres, #cuatro {
