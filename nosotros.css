@@ -1,6 +1,7 @@
 p, h2, h3 {
     font-size: 1.5rem;
 }
+
 img{
     width:"200px";
     height:"200px";
@@ -11,6 +12,7 @@ img{
     margin: 50px;
     font-size: 3rem;
 }
+
 #grande {
     text-align: justify;    
     display: flex; /* Cambiamos display a flex */
@@ -23,8 +25,7 @@ img{
     margin: 10px;
 }
 
-/* Para hacer que los divs tengan el mismo alto, puedes usar 'display: flex' en cada uno */
-#uno, #dos, #tres, #cuatro {
+.tarjeta-persona {
     margin: 5px;
     padding: 5px;
     text-align: justify;
