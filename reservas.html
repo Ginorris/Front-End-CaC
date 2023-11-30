@@ -129,7 +129,7 @@
 
           <button type="button" id="reservar">Reservar</button>
 
-          <?php
+          <!-- <?php
           if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $fecha = $_POST["fecha"];
           $horario = $_POST["horario"];
@@ -145,47 +145,54 @@
         
           echo "¡Reserva realizada con éxito! Te hemos enviado un correo electrónico con los detalles.";
         }
-        ?>
+        ?> -->
         </form>
 
         <script>
-          document
-            .getElementById("reservar")
-            .addEventListener("click", function () {
-              const fechaInput = document.getElementById("fecha");
-              const horario = document.getElementById("horario").value;
-              const nombre = document.getElementById("nombre").value;
-              const apellido = document.getElementById("apellido").value;
-              const email = document.getElementById("email").value;
+          document.getElementById("reservar").addEventListener("click", function () {
+            const fechaInput = document.getElementById("fecha");
+            const horario = document.getElementById("horario").value;
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            const email = document.getElementById("email").value;
 
-              const fechaSeleccionada = new Date(fechaInput.value);
-              const fechaActual = new Date();
-              const horarioActual =
-                new Date().getHours() + ":" + new Date().getMinutes();
-
-              if (fechaSeleccionada <= fechaActual) {
-                alert("Debe elegir una fecha posterior a la actual.");
-                return;
-              }
-
-              if (
-                fechaSeleccionada.toDateString() === fechaActual.toDateString() &&
-                horario < horarioActual
-              ) {
-                alert(
-                  "Debe elegir otro horario, no puede ser anterior al horario actual."
-                );
-                return;
-              }
-
-              const mensaje = `
-                              La fecha elegida es ${fechaInput.value},
-                              el horario seleccionado es ${horario},
-                              Nombre: ${nombre}, Apellido: ${apellido},
-                              Email: ${email}`;
-
-              alert(mensaje);
-            });
+            if (nombre.length < 3 || apellido.length < 3 || email.length < 3) {
+            alert("Nombre, Apellido y Correo Electrónico deben tener al menos 3 caracteres.");
+            return;
+            }
+            if (!fechaInput.value || !horario || !nombre || !apellido || !email) {
+              alert("Todos los campos son obligatorios.");
+              return;
+            }
+            const fechaSeleccionada = new Date(fechaInput.value);
+            const fechaActual = new Date();
+            const horarioActual =
+              new Date().getHours() + ":" + new Date().getMinutes();
+            if (fechaSeleccionada <= fechaActual) {
+              alert("Debe elegir una fecha posterior a la actual.");
+              return;
+            }
+            if (
+              fechaSeleccionada.toDateString() === fechaActual.toDateString() &&
+              horario < horarioActual
+            ) {
+              alert(
+                "El horario no puede ser anterior al horario actual."
+              );
+              return;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailRegex)) {
+              alert("Por favor, ingrese una dirección de correo electrónico válida.");
+              return;
+            }
+            const mensaje = `
+                            La fecha elegida es ${fechaInput.value},
+                            el horario seleccionado es ${horario},
+                            Nombre: ${nombre}, Apellido: ${apellido},
+                            Email: ${email}`;
+            alert(mensaje);
+          });
         </script>
       </div>
     </main>

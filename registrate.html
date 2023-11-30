@@ -83,7 +83,9 @@
           <table>
             <tr>
               <td>Nombre</td>
-              <td><input type="text" placeholder="Tu Nombre" name="Nombre" /></td>
+              <td>
+                <input type="text" placeholder="Tu Nombre" name="Nombre" />
+              </td>
             </tr>
             <tr>
               <td>Apellido</td>
@@ -116,6 +118,52 @@
             <button type="submit">Registrate</button>
           </div>
         </form>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", function (event) {
+              event.preventDefault();
+
+              const nombre = document.querySelector(
+                'input[name="Nombre"]'
+              ).value;
+              const apellido = document.querySelector(
+                'input[name="Apellido"]'
+              ).value;
+              const email = document.querySelector(
+                'input[name="Correo Electronico"]'
+              ).value;
+              const password = document.querySelector(
+                'input[name="Contraseña"]'
+              ).value;
+
+              if (nombre.length < 3) {
+                alert("Nombre debe tener al menos 3 caracteres.");
+                return;
+              }
+              if (apellido.length < 3) {
+                alert("Apellido debe tener al menos 3 caracteres.");
+                return;
+              }
+              if (email.length < 3 || !email.includes("@")) {
+                alert("Ingrese un correo electrónico válido.");
+                return;
+              }
+              if (
+                password.length < 3 ||
+                !/[A-Z]/.test(password) ||
+                !/\d/.test(password)
+              ) {
+                alert(
+                  "La contraseña debe tener al menos 3 caracteres, una mayúscula y un número."
+                );
+                return;
+              }
+              alert("Registro exitoso!");
+            });
+          });
+        </script>
       </div>
     </main>
 
