@@ -73,9 +73,9 @@ document.getElementById('btn-add-movie').addEventListener('click', async functio
             tableClients.innerHTML='';
             clients.forEach((clients, index) => {
               let tr = `<tr>
-                            <td>${clients.f_name}</td>
-                            <td>${clients.l_name}</td>
-                            <td>${clients.adress}</td>
+                            <td>${clients.first_name}</td>
+                            <td>${clients.last_name}</td>
+                            <td>${clients.address}</td>
                             <td>${clients.birth_date}</td>
                             <td>${clients.email}</td>
                             <td>${clients.phone}</td>
